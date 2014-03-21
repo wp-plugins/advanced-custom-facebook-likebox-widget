@@ -6,7 +6,7 @@
 Plugin Name: Advanced Custom Facebook Likebox Widget
 Plugin URI: http://www.sparxseo.com
 Description: Advanced Custom Facebook Likebox Widget is a customizable facebook likebox wordpress widget. There have lots of options to customize the likebox widget. So by using this you can up and run a customizable wordpress widget on your website very easily.
-Version: 1.0
+Version: 1.1
 Author: Alan Ferdinand
 Author URI: http://www.sparxseo.com
 */
@@ -143,8 +143,8 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
     <select id="<?php echo $this->get_field_id( 'author' ); ?>"
         name="<?php echo $this->get_field_name( 'author' ); ?>"
         class="widefat" style="width:100%;">
-            <option value="true" <?php if ($author == 'true') echo 'selected="true"'; ?> >Ok Sure!</option>
-            <option value="false" <?php if ($author == 'false') echo 'selected="false"'; ?> >No</option>	
+            <option value="false" <?php if ($author == 'false') echo 'selected="false"'; ?> >No</option>
+			<option value="true" <?php if ($author == 'true') echo 'selected="true"'; ?> >Ok Sure!</option>			
     </select>
 </p>
 <!--end of configuration fields-->
@@ -155,8 +155,20 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
         extract($instance);
         $title = apply_filters('widget_title', $title);
         $description = apply_filters('widget_description', $description);
+		if(empty($title)) $title = "Advanced Custom Facebook Likebox Widget";
+        if(empty($page)) $page = "http://www.facebook.com/FacebookDevelopers";
+        if(empty($width)) $width = "300";
+        if(empty($height)) $height = "356";
+        if(empty($background)) $background = "#050026";
+		if(empty($header)) $header = "true";
+		if(empty($padding)) $padding = "15";
+		if(empty($radius)) $radius = "15";
+		if(empty($border)) $border = "2";
+        if(empty($bordercolor)) $bordercolor = "#9A1717";
+		if(empty($theme)) $theme = "light";
+		if(empty($author)) $author = "false";
+		
         $data = "";
-        
         $data .= "
             <script>(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
