@@ -5,7 +5,7 @@ Author Name : Alan Ferdinand
 Author URL : http://www.sparxseo.com
 Tags: advanced custom facebook likebox widget, wordpress widget, advanced facebook, custom facebook, facebook likebox, facebook widget, facebook for wordpress, facebook widget for wordpress, super customizable facebook likebox
 Requires at least: 3.0.1
-Tested up to: 3.8
+Tested up to: 3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,3 +47,7 @@ Stable version release - 19th March 2014
 
 = 1.1 =
 simple bug fixes
+
+= 1.2 =
+simple bug fixes
+can show facebook page stream now

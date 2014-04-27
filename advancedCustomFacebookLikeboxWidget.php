@@ -6,7 +6,7 @@
 Plugin Name: Advanced Custom Facebook Likebox Widget
 Plugin URI: http://www.sparxseo.com
 Description: Advanced Custom Facebook Likebox Widget is a customizable facebook likebox wordpress widget. There have lots of options to customize the likebox widget. So by using this you can up and run a customizable wordpress widget on your website very easily.
-Version: 1.1
+Version: 1.2
 Author: Alan Ferdinand
 Author URI: http://www.sparxseo.com
 */
@@ -75,9 +75,19 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
 	class="widefat"
 	id="<?php echo $this->get_field_id('height');?>"
 	name="<?php echo $this->get_field_name('height');?>"
-    value="<?php echo !empty($height) ? $height : "356"; ?>" />
+    value="<?php echo !empty($height) ? $height : "556"; ?>" />
 </p>
+
 <div style="color:#fff; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#333333;">Advanced Configuration</div>
+<p>
+    <label for="<?php echo $this->get_field_id( 'stream' ); ?>">Show Stream:</label> 
+    <select id="<?php echo $this->get_field_id( 'stream' ); ?>"
+        name="<?php echo $this->get_field_name( 'stream' ); ?>"
+        class="widefat" style="width:100%;">
+            <option value="true" <?php if ($stream == 'true') echo 'selected="true"'; ?> > Yes</option>
+            <option value="false" <?php if ($stream == 'false') echo 'selected="false"'; ?> >No</option>	
+    </select>
+</p>
 <p>
     <label for="<?php echo $this->get_field_id('background'); ?>">Background Color :</label> 
     <input
@@ -92,8 +102,8 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
     <select id="<?php echo $this->get_field_id( 'header' ); ?>"
         name="<?php echo $this->get_field_name( 'header' ); ?>"
         class="widefat" style="width:100%;">
+            <option value="false" <?php if ($header == 'false') echo 'selected="false"'; ?> >No</option>
             <option value="true" <?php if ($header == 'true') echo 'selected="true"'; ?> > Yes</option>
-            <option value="false" <?php if ($header == 'false') echo 'selected="false"'; ?> >No</option>	
     </select>
 </p>
 <p>
@@ -143,8 +153,8 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
     <select id="<?php echo $this->get_field_id( 'author' ); ?>"
         name="<?php echo $this->get_field_name( 'author' ); ?>"
         class="widefat" style="width:100%;">
-            <option value="false" <?php if ($author == 'false') echo 'selected="false"'; ?> >No</option>
-			<option value="true" <?php if ($author == 'true') echo 'selected="true"'; ?> >Ok Sure!</option>			
+            <option value="true" <?php if ($author == 'true') echo 'selected="true"'; ?> >Ok Sure!</option>
+            <option value="fa1se" <?php if ($author == 'false') echo 'selected="false"'; ?> >No</option>
     </select>
 </p>
 <!--end of configuration fields-->
@@ -159,8 +169,9 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
         if(empty($page)) $page = "http://www.facebook.com/FacebookDevelopers";
         if(empty($width)) $width = "300";
         if(empty($height)) $height = "356";
+        if(empty($stream)) $stream = "true";
         if(empty($background)) $background = "#050026";
-		if(empty($header)) $header = "true";
+		if(empty($header)) $header = "false";
 		if(empty($padding)) $padding = "15";
 		if(empty($radius)) $radius = "15";
 		if(empty($border)) $border = "2";
@@ -193,14 +204,13 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
                 data-width='$width' data-height='$height' 
                 data-href='$page'
                 data-border-color='$bordercolor' data-show-faces='true'
-                data-stream='false' data-header='false' data-color-scheme='dark'>
+                data-stream='$stream' data-header='$header' data-color-scheme='$theme'>
             </div>
-         </div>
-      </div>
-</div>            
-";
-if($author == "true"){
-	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.sparxseo.com' target='_blank' style='color: #808080;' title='Powered by SparxSEO'>SparxSEO.COM</a></div>";}
+         </div>";
+if($author != "false"){
+	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.sparxseo.com' target='_blank' style='color: #808080;' title='click here'>seo austin</a></div>";}
+$data .= "</div></div>";           
+
             echo $before_widget;
             echo $before_title . $title . $after_title;
             echo $data;
