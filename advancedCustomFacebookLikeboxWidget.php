@@ -208,7 +208,7 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
             </div>
          </div>";
 if($author != "false"){
-	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.garretcordwerner.com' target='_blank' style='color: #808080;' title='click here'>Seattle Architects</a></div>";}
+	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.bestdumpsterdeals.com' target='_blank' style='color: #808080;' title='visit the link'>Best Dumpster Deals</a></div>";}
 $data .= "</div></div>";           
 
             echo $before_widget;
