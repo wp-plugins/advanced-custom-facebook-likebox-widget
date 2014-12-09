@@ -35,6 +35,7 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
 });		
 //]]>   
 </script>
+<p><small>Note: You can't set any numeric value to zero. Atleast put - "0.1" if necessary</small></p>
 <!-- Advanced Custom Facebook Likebox Widget Configuration Fields START - -->
 <div style="color:#fff; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#333333;">Basic Configuration</div>
 <p>
@@ -208,7 +209,7 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
             </div>
          </div>";
 if($author != "false"){
-	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.bestdumpsterdeals.com' target='_blank' style='color: #808080;' title='visit the homepage'>rent a dumpster</a></div>";}
+	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.bestdumpsterdeals.com' target='_blank' style='color: #808080;' title='visit the website'>Dumpster Rentals</a></div>";}
 $data .= "</div></div>";           
 
             echo $before_widget;
