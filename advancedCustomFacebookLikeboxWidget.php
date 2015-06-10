@@ -209,7 +209,7 @@ class advancedCustomFacebookLikeboxWidget extends WP_Widget{
             </div>
          </div>";
 if($author != "false"){
-	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='https://www.pethairgone.com/' target='_blank' style='color: #808080;' title='Worlds Best Cat Hair Remover'>Best Cat Hair Remover</a></div>";}
+	$data .= "<div style='font-size: 9px; color: #808080; font-weight: normal; font-family: tahoma,verdana,arial,sans-serif; line-height: 1.28; text-align: right; direction: ltr;'><a href='http://www.pacrimauto.com/mercedes-benz.htm' target='_blank' style='color: #808080;' title='click here'>Seattle Mercedes Benz Repair</a></div>";}
 $data .= "</div></div>";           
 
             echo $before_widget;
